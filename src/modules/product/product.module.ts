@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import type { IProduct } from "./product.type";
 import Toastify from 'toastify-js'
 
@@ -8,7 +8,7 @@ let add_product: HTMLElement | null = document.getElementById('add_product');
 let product_grid = document.getElementById('product_grid');
 let table_body = document.getElementById('table_body');
 let edit_product_form: HTMLElement | null = document.getElementById('edit_product_form');
-let cart_section: HTMLElement | null = document.getElementById('cart_section');
+// let cart_section: HTMLElement | null = document.getElementById('cart_section');
 
 
 // Product Rendering
@@ -16,6 +16,7 @@ async function productRender() {
 
     try {
         let res = await api.get('/products');
+        console.log("PRODUCT DATA:", res.data);
 
         if (product_grid) {
             product_grid.innerHTML = makeProductHtmlCode(res.data).HomPageHtml;
@@ -179,7 +180,7 @@ edit_product_form?.addEventListener('submit', async (event) => {
 
             let { id, ...updateFormData } = validateFormData;
 
-            let res = await api.put(`/products/${productId}`, validateFormData);
+            let res = await api.put(`/products/${productId}`, updateFormData);
 
             console.log(res);
 
@@ -210,7 +211,7 @@ function validate(formData: IProduct) {
 
 
     let conditions =
-        formData.name == ""
+        formData.product_name == ""
         || !formData.image
         || Number(formData.price) <= 0
         || !formData.ratting
@@ -251,7 +252,7 @@ function makeProductHtmlCode(arr: IProduct[]) {
                       <!-- Content -->
                    <div class="p-5">
                     <h3 class="text-lg font-semibold text-gray-900">
-                   ${item.name}
+                   ${item.product_name}
                      </h3>
 
                   <!-- Rating + Price -->
@@ -289,7 +290,7 @@ function makeProductHtmlCode(arr: IProduct[]) {
 
                              <td class="px-6 py-4">
                                <p class="font-medium text-gray-800">
-                                ${item.name}
+                                ${item.product_name}
                              </p>
                              <p class="text-sm text-gray-400">
                                 Running Shoes

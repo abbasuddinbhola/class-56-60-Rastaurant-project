@@ -1,9 +1,9 @@
 
 
 export type IProduct = {
-    id?: string | number;
+    id: string;
     image: string;
-    name?: string;
+    product_name: string;
     price: number;
     ratting: number;
 }

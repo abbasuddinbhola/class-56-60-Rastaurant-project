@@ -5,7 +5,7 @@ import type { ICart, ICartstore } from "./cart.type";
 
 let cart_section = document.getElementById('cart_section');
 let cart_togglers = document.querySelectorAll('.cart_toggler');
-let cart_count = document.getElementById('cart_count');
+// let cart_count = document.getElementById('cart_count');
 let product_grid = document.getElementById('product_grid');
 let cart_container = document.getElementById('cart_container');
 let clear_btn = document.getElementById('clear_btn');
@@ -36,7 +36,7 @@ if (product_grid) {
 
         if (addToCartBtn) {
             let dataId = ((event.target) as HTMLElement).dataset.id;
-
+            if (!dataId) return;
             let res = await api.get(`/products/${dataId}`);
             // console.log(res);
 
@@ -69,6 +69,7 @@ if (cart_container) {
         if (deleteBtn) {
 
             let dataId = ((event.target) as HTMLElement).dataset.id;
+            if (!dataId) return;
 
             //   let oldCartFromLocalStorage = localStorage.getItem('cart');
 
@@ -119,6 +120,7 @@ if (cart_container) {
         // Increment quantity;
         if (incrementBtn) {
             let dataId = ((event.target) as HTMLElement).dataset.id;
+            if (!dataId) return;
 
             let oldCartData = JSON.parse(localStorage.getItem('cart') as string).data
 
@@ -151,6 +153,7 @@ if (cart_container) {
         // Decrement quantity;
         if (decrementBtn) {
             let dataId = ((event.target) as HTMLElement).dataset.id;
+            if (!dataId) return;
 
             let oldCartData = JSON.parse(localStorage.getItem('cart') as string).data
 
@@ -195,7 +198,7 @@ function addCartToLocalStorage(product: IProduct) {
             data: [
                 {
                     id: product.id,
-                    name: product.name,
+                    name: product.product_name,
                     image: product.image,
                     price: product.price,
                     quantity: 1,
@@ -221,7 +224,7 @@ function addCartToLocalStorage(product: IProduct) {
             ...oldCartData,
             {
                 id: product.id,
-                name: product.name,
+                name: product.product_name,
                 image: product.image,
                 price: product.price,
                 quantity: 1,

@@ -1,4 +1,40 @@
 {
-  "products": [],
+  "products": [
+    {
+      "product_name": "Quail Rose",
+      "price": "611",
+      "ratting": "2",
+      "image": "Chicken_Burger.jpg",
+      "id": "MQLtGt_8lho"
+    },
+    {
+      "product_name": "Kylee Moody",
+      "price": "778",
+      "ratting": "2",
+      "image": "Chicken_Burger.jpg",
+      "id": "-mcHKZ4M5M0"
+    },
+    {
+      "product_name": "Lunea Mcgee",
+      "price": "80",
+      "ratting": "5",
+      "image": "Chicken_Sandwich.jpg",
+      "id": "US3rgHtpofU"
+    },
+    {
+      "product_name": "Herrod Schultz",
+      "price": "408",
+      "ratting": "3",
+      "image": "Pasta.jpg",
+      "id": "eHQ5xmKOXVk"
+    },
+    {
+      "product_name": "Emi Maynard",
+      "price": "525",
+      "ratting": "4",
+      "image": "Chicken_Sandwich.jpg",
+      "id": "gXL21GhRs08"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
