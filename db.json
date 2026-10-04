@@ -34,6 +34,27 @@
       "ratting": "4",
       "image": "Chicken_Sandwich.jpg",
       "id": "gXL21GhRs08"
+    },
+    {
+      "product_name": "Quentin Gentry",
+      "price": "546",
+      "ratting": "1",
+      "image": "Chicken_Sandwich.jpg",
+      "id": "6Ln3QAx6Xik"
+    },
+    {
+      "product_name": "Tashya Lloyd",
+      "price": "666",
+      "ratting": "3",
+      "image": "Chicken_Fry.jpg",
+      "id": "sNnPleOYrAI"
+    },
+    {
+      "product_name": "Coby Hill",
+      "price": "762",
+      "ratting": "4",
+      "image": "Pasta.jpg",
+      "id": "6NZmewuD1T4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
