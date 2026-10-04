@@ -313,7 +313,7 @@ function makeProductHtmlCode(arr: IProduct[]) {
                             <div class="flex justify-end gap-2">
 
                             <a 
-                         href="edit-product?productId=${item.id}"
+                         href="edit-product.html?productId=${item.id}"
                              class="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-100">
                              Edit
                          </a>
